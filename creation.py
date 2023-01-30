@@ -14,13 +14,12 @@ def main():
     Temperature=st.text_input("Temperature (25-50) (in celcius) :")
     output=""
     if st.button("Predict Stress Level"):
-        try:
-            Heart_rate=int(Heart_rate)
-            Temperature=int(Temperature)
+            #Heart_rate=int(Heart_rate)
+            #Temperature=int(Temperature)
             output=Prediction([Heart_rate,Temperature])
             st.success(output[0])
-        except:
-            st.write("Enter correct values")
+       
+         
        
 
 
