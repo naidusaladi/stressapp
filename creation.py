@@ -4,7 +4,7 @@ import streamlit as st
 import pickle 
 
 def Prediction(arr):
-    model=pickle.load(open("model.sav", 'rb'))
+    model=pickle.load(open("C:\\Users\\DELL\\Desktop\\stress_model_streamlit\\model.sav", 'rb'))
     pred=model.predict([arr])
     return pred
 def main():
@@ -14,15 +14,17 @@ def main():
     Temperature=st.text_input("Temperature (25-50) (in celcius) :")
     output=""
     if st.button("Predict Stress Level"):
-            #Heart_rate=int(Heart_rate)
-            #Temperature=int(Temperature)
+        try:
+            Heart_rate=int(Heart_rate)
+            Temperature=int(Temperature)
             output=Prediction([Heart_rate,Temperature])
             st.success(output[0])
-       
-         
+        except:
+            st.write("Enter correct values")
        
 
 
 if __name__=="__main__":
     main()
     
+
