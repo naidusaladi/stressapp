@@ -4,7 +4,7 @@ import streamlit as st
 import pickle 
 
 def Prediction(arr):
-    model=pickle.load(open("C:\\Users\\DELL\\Desktop\\stress_model_streamlit\\model.sav", 'rb'))
+    model=pickle.load(open("model.sav", 'rb'))
     pred=model.predict([arr])
     return pred
 def main():
